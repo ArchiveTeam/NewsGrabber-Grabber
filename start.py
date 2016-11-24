@@ -24,7 +24,8 @@ def main():
     tools.create_dir(settings.dir_old_lists)
 
     if not os.path.isfile(settings.target_main):
-        raise Exception("Please add a rsync target to file '{settings.target_main}'.".format(**locals()))
+        raise Exception("Please add a rsync target to file '{target_main}'."
+            .format(target_main=settings.target_main))
 
     settings.irc_bot = irc.IRC()
     settings.irc_bot.daemon = True

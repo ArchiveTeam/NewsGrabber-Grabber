@@ -1,6 +1,7 @@
+import re
 import socket
 import threading
-import re
+import time
 
 import psutil
 
@@ -45,7 +46,7 @@ class IRC(threading.Thread):
         self.listener()
 
     def start_pinger(self):
-        self.pinger = threading.Thread(self.pinger)
+        self.pinger = threading.Thread(target=self.pinger)
         self.pinger.daemon = True
         self.pinger.start()
 
