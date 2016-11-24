@@ -1,6 +1,8 @@
 import os
 import time
 
+open('UPDATE', 'w').close()
+
 while True:
     if os.path.isfile('UPDATE'):
         time.sleep(60)
