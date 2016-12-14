@@ -45,7 +45,6 @@ class Grab(threading.Thread):
     def grab_single(name):
         video_string = '--youtube-dl ' if '-videos' in name else ''
         extra_args = ' --1'
-        os.system('~/.local/bin/grab-site --input-file {name} --level=0 --ua="ArchiveTeam; Googlebot/2.1" --no-sitemaps --concurrency=5{extra} --warc-max-size=524288000 --wpull-args="{video}--no-check-certi
-ficate --timeout=300" > /dev/null 2>&1'.format(
+        os.system('~/.local/bin/grab-site --input-file {name} --level=0 --ua="ArchiveTeam; Googlebot/2.1" --no-sitemaps --concurrency=5{extra} --warc-max-size=524288000 --wpull-args="{video}--no-check-certificate --timeout=300" > /dev/null 2>&1'.format(
             name=name, extra=extra_args, video=video_string))
         os.remove(name)
